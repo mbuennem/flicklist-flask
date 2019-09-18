@@ -87,7 +87,7 @@ def crossoff_movie():
 
 @app.route("/add", methods=['POST'])
 def add_movie():
-    new_movie = request.form['new-movie']
+    new_movie = cgi.escape(request.form['new-movie'])
 
     # TODO 
     # 'escape' the user's input so that if they typed HTML, it doesn't mess up our site
